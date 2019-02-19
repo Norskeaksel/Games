@@ -1,0 +1,3 @@
+﻿  Source.cpp
+c:\users\ahsor\onedrive\dokumenter\c++\other\mastermind med grafikk\fortsatt øving 4\tdt4102_graphics1\source.cpp(11): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  TDT4102_Graphics1.vcxproj -> C:\Users\ahsor\OneDrive\Dokumenter\C++\Other\Mastermind med grafikk\fortsatt øving 4\Debug\Mastermind.exe
