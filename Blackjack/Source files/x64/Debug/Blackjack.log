@@ -1,0 +1,11 @@
+﻿  Carddeck.cpp
+c:\users\ahsor\onedrive\dokumenter\c++\other\ny øving 5\blackjack\source files\carddeck.h(31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Cards.cpp
+  main.cpp
+c:\users\ahsor\onedrive\dokumenter\c++\other\ny øving 5\blackjack\source files\carddeck.h(31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\ahsor\onedrive\dokumenter\c++\other\ny øving 5\blackjack\source files\blackjack.h(38): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Blackjack.cpp
+c:\users\ahsor\onedrive\dokumenter\c++\other\ny øving 5\blackjack\source files\carddeck.h(31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\ahsor\onedrive\dokumenter\c++\other\ny øving 5\blackjack\source files\blackjack.h(38): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  Blackjack.vcxproj -> C:\Users\ahsor\OneDrive\Dokumenter\C++\Other\ny øving 5\Blackjack\x64\Debug\Blackjack.exe
