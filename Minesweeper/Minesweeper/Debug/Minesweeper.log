@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\ahsor\onedrive\dokumenter\c++\other\nye øvinger\minesweeper\minesweeper\main.cpp(6): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Minesweeper.vcxproj -> C:\Users\ahsor\OneDrive\Dokumenter\C++\Other\Nye øvinger\Minesweeper\Debug\Minesweeper.exe
