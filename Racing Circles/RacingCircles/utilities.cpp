@@ -86,7 +86,7 @@ void offTrack(PhysicsState& ps, vector<pair<double, double>> goals) {
 vector<Obstacle> generateObs(vector<pair<double, double >>goals) {
 	vector<Obstacle> obs;
 	for (int i = 0; i < goals.size(); i++) {
-		Obstacle a = { goals[i].first,goals[i].second };
+		Obstacle a = { goals[i].first-30+rand()%60,goals[i].second-30+rand()%60 };
 		int ran = rand() % 100;
 		switch (ran) {
 		case 1:
@@ -118,13 +118,13 @@ void collision(PhysicsState& ps, vector<Obstacle>obs) {
 		double sumR = vehRad + a.r;
 		if (circleCollision(delX, delY, sumR)) {
 			if (a.r == spillRad)
-				ps.grip = 0.05;
+				ps.grip = 0.08;
 			else if (a.r == boostRad) {
 				ps.grip = 2;
 				ps.vel += 0.5;
 			}
 			else if (a.r == pillarRad)
-				ps.vel = -0.5;
+				ps.vel = -1.0;
 		}
 	}
 }

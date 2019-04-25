@@ -19,9 +19,9 @@ int main() {
 	srand(time(NULL));
 	string p1 = "Player 1", p2 = "Player 2";
 	bool IAI;
-	cout << "Welcome to Racing Circles!\nYour objective is to drive into the checkpoints of the same color as yourself. It's first to 25.\nYou boost with the up arrow (or w), steer with the left and right key (a and d) and break with the down key (s).\nEnter the name of player 1: ";
+	cout << "Welcome to Racing Circles!\nYour objective is to drive into the checkpoints of the same color as yourself. It's first to 25. (Ca 3 laps)\nYou boost with the up arrow (or w), steer with the left and right key (a and d) and break with the down key (s).\nEnter the name of player 1: ";
 	cin >> p1;
-	cout << "\nEnter the name of player 2. If you don't want another player type '0', then enter: ";
+	cout << "\nEnter the name of player 2. If you don't want another player, type '0', then enter: ";
 	cin >> p2;
 	cout << "\nDo you want to play against an AI? Enter '1' if you do and '0' if you don't: ";
 	cin >> IAI;
@@ -30,7 +30,7 @@ int main() {
 	Track t;
 	Vehicle car1(FL_DARK_BLUE, h / 2, 30, driveAlgorithm, Up, Down, Right, Left, t, p1, IAI);
 	if (p2 != "0") {
-		Vehicle car2(FL_DARK_CYAN, h / 2, 40, driveAlgorithm, 'w', 's', 'd', 'a', t, p2);
+		Vehicle car2(FL_DARK_CYAN, h / 2, 40, driveAlgorithm, 'w', 's', 'd', 'a', t, p2, IAI);
 		window->end();
 		window->show();
 		auto next = std::chrono::steady_clock::now();

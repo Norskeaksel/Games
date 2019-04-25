@@ -32,7 +32,7 @@ public:
 		, pair<double, double>(*dA)(PhysicsState, int, int, int, int)
 		, int w, int s, int a, int d
 		, Track &t
-		, string p, bool IAI = 0) :
+		, string p, bool IAI) :
 		Fl_Widget(100, 100, 100, 100)
 		, color(c), xStart(x), yStart(y)
 		, power(w)
@@ -71,7 +71,7 @@ public:
 		}
 	}
 	void victoryScreen(int points, int &AIpoints){
-		if (points >= 1 || AIpoints >= 4) {
+		if (points >= 25 || AIpoints >= 4) {
 			fl_color(color);
 			fl_font(fl_font(), 190);
 			string victory = player + " wins!";
