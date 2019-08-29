@@ -67,7 +67,7 @@ bool fourInARow(Board b, int r, int c){
 	return 0;
 }
 bool playerTurn(Board b,Tile t=RED){
-	cout <<endl<< b<<endl<<"Place piece in column ";
+	cout <<endl<<"Board state:\n" << b<<endl<<"Choose column ";
 	int col=-1;
 	while(col<0||col>=COLS){
 		cout << ":";
@@ -77,17 +77,26 @@ bool playerTurn(Board b,Tile t=RED){
 	put(b, col, t);
 	return fourInARow(b, row, col);
 }
-bool machineTurn(Board b, Tile t = YELLOW){
-	int col;
-	do {
-		col = rand() % COLS;
-	} while (findLowestPlace(b, col)==-1);
-	int row = findLowestPlace(b, col);
-	put(b, col, t);
-	return fourInARow(b, row, col);
+bool otherTurn(Board b, int choice, Tile t = YELLOW) {
+	if (choice == 2) {
+		playerTurn(b, t);
+	}
+	else {
+		int col;
+		do {
+			col = rand() % COLS;
+		} while (findLowestPlace(b, col) == -1);
+		int row = findLowestPlace(b, col);
+		put(b, col, t);
+		return fourInARow(b, row, col);
+	}
 }
 
 int main() {
+	cout << "Welcome to 4 in a row! Press 1 to play against the computer and 2 to play against another player: ";
+	int choice;
+	cin >> choice;
+	cout << endl;
 	Board b;
 	int sum = ROWS * COLS;
 	for (auto& y : b)
@@ -95,11 +104,17 @@ int main() {
 			x = EMPTY;
 	while(sum-=2){
 		if (playerTurn(b)) {
-			cout <<b<< "\nYou won!\n";
+			if (choice == 2)
+				cout << "Player1 wins!\n";
+			else
+				cout <<b<< "\nYou won!\n";
 			break;
 		}
-		if(machineTurn(b)){
-			cout << b<<"\nYou lose\n";
+		if(otherTurn(b,choice)){
+			if (choice == 2)
+				cout << "Player2 wins!\n";
+			else
+				cout << b<<"\nYou lose\n";
 			break;
 		}
 	}
