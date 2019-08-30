@@ -37,9 +37,8 @@ int put(Board b, int c, Tile t) {
 bool isOutOfBounds(int r, int c) {
 	return !(r >= 0 && r < ROWS && c >= 0 && c < COLS);
 }
-int countTiles(Board b, int r, int c, int dr, int dc) {
+int countTiles(Board b, int r, int c, int dr, int dc, Tile t) {
 	int sum = 0;
-	Tile t = b[r][c];
 	while (!isOutOfBounds(r, c)) {
 		if (b[r][c] != t)
 			return sum;
@@ -49,12 +48,26 @@ int countTiles(Board b, int r, int c, int dr, int dc) {
 	}
 	return sum;
 }
-bool xInARow(Board b, int r, int c,const int x=4) {
+bool xInARow(Board b, int r, int c, int x, Tile t) {
 	for (int i = -1; i <= 1; i++) {
 		for (int j = -1; j <= 1; j++) {
 			if (i == 0 && j == 0) continue;
-			if (countTiles(b, r, c, i, j) >= x)
+			if (countTiles(b, r, c, i, j, t) >= x)
 				return 1;
+		}
+	}
+	return 0;
+}
+bool victory(Board b, Tile t) {
+	for (int row = 0; row < ROWS; row++) {
+		for (int col = 0; col < COLS; col++) {
+			for (int i = -1; i <= 1; i++) {
+				for (int j = -1; j <= 1; j++) {
+					if (i == 0 && j == 0) continue;
+					if (countTiles(b, row, col, i, j, t) >= 4)
+						return 1;
+				}
+			}
 		}
 	}
 	return 0;

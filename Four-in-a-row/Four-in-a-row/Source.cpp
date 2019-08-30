@@ -2,5 +2,10 @@
 #include "playGame.h"
 
 int main() {
-	play();
+	char a = 'y';
+	while (a == 'y'){
+		play();
+		cout << "\nWanna play again? (y/n): ";
+		cin >> a;
+	}
 }

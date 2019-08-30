@@ -12,5 +12,6 @@ ostream& operator<<(ostream& o, Board b);
 int findLowestPlace(Board b, int c);
 int put(Board b, int c, Tile t);
 bool isOutOfBounds(int r, int c);
-int countTiles(Board b, int r, int c, int dr, int dc);
-bool xInARow(Board b, int r, int c,const int x);
+int countTiles(Board b, int r, int c, int dr, int dc, Tile t);
+bool xInARow(Board b, int r, int c, int x, Tile t);
+bool victory(Board b, Tile t);

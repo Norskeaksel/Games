@@ -3,13 +3,13 @@
 bool playerTurn(Board b, Tile t = RED) {
 	cout << endl << "Board state:\n" << b << endl << "Choose column ";
 	int col = -1;
-	while (col < 0 || col >= COLS) {
+	while (col < 0 || col >= COLS|| findLowestPlace(b, col)==-1) {
 		cout << ":";
 		cin >> col;
 	}
 	int row = findLowestPlace(b, col);
 	put(b, col, t);
-	return xInARow(b, row, col,4);
+	return victory(b,t);
 }
 
 bool machineTurn(Board b, int choice, Tile t = YELLOW) {
@@ -20,7 +20,7 @@ bool machineTurn(Board b, int choice, Tile t = YELLOW) {
 		int col=chooseMove(b);
 		int row = findLowestPlace(b, col);
 		put(b, col, t);
-		return xInARow(b, row, col,4);
+		return victory(b, t);
 	}
 }
 
@@ -37,14 +37,14 @@ void play(){
 	while (sum -= 2) {
 		if (playerTurn(b)) {
 			if (choice == 2)
-				cout << "Player1 wins!\n";
+				cout << b << "Player1 wins!\n";
 			else
 				cout << b << "\nYou won!\n";
 			break;
 		}
 		if (machineTurn(b, choice)) {
 			if (choice == 2)
-				cout << "Player2 wins!\n";
+				cout << b << "Player2 wins!\n";
 			else
 				cout << b << "\nYou lose\n";
 			break;

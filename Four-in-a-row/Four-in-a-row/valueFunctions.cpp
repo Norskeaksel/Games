@@ -10,11 +10,11 @@ int counterValue(Board b, Tile t = RED) {
 		if (row == -1)
 			continue;
 		else {
-			if (xInARow(b, row, c, 2))
-				ans -= 2;
-			if (xInARow(b, row, c, 3))
-				ans -= 5;
-			if (xInARow(b, row, c, 4))
+			if (xInARow(b, row, c, 2,t))
+				ans -= 3;
+			if (xInARow(b, row, c, 3,t))
+				ans -= 15;
+			if (victory(b,t))
 				ans -= 100;
 		}
 		b[row][c] = EMPTY;
@@ -24,16 +24,16 @@ int counterValue(Board b, Tile t = RED) {
 int value(Board b, int col, Tile t = YELLOW) {
 	int ans = 0;
 	if (col == 3)
-		ans += 4;
+		ans += 1;
 	int row = put(b, col, t);
 	if (row == -1)
 		ans = -1000;
 	else {
-		if (xInARow(b, row, col, 2))
+		if (xInARow(b, row, col, 2,t))
 			ans += 2;
-		if (xInARow(b, row, col, 3))
+		if (xInARow(b, row, col, 3,t))
 			ans += 5;
-		if (xInARow(b, row, col, 4))
+		if (victory(b,t))
 			ans += 1000;
 		ans += counterValue(b);
 	}
