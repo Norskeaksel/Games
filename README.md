@@ -1,1 +1,1 @@
-Here are some some games that I've created a version of. Each folder contains the files for an individual game
+Each folder contains the files for an individual game. They can be opened with Visual Studio.
