@@ -26,8 +26,9 @@ bool machineTurn(Board b, int choice, Tile t = YELLOW) {
 
 void play(){
 	cout << "Welcome to 4 in a row! Press 1 to play against the computer and 2 to play against another player: ";
-	int choice;
-	cin >> choice;
+	int choice=-1;
+	while(choice !=1 && choice != 2)
+		cin >> choice;
 	cout << endl;
 	Board b;
 	int sum = ROWS * COLS;
