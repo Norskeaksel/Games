@@ -6,6 +6,7 @@
 #include <cmath>
 #include "Track.h"
 #include <FL/Fl_Box.H>
+#include <string>
 extern double w, h;
 
 using namespace std;
