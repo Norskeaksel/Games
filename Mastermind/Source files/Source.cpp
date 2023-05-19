@@ -16,6 +16,6 @@ int main() {
 	swapNumbers(&x, &y);
 	//testTablesSorting();
 	//testCStrings();
-	cout << "Skriv 4 bokstaver mellom A og F. Du skal gjette hvilke bokstaver jeg har valgt.\nStart med å trykke på next i grafikkvinduet.\nTrykk deretter i konsollvinduet og du er klar til å gjette koden :)\n";
+	cout << "Skriv 4 bokstaver mellom A og F. Du skal gjette hvilke bokstaver jeg har valgt.\n";
 	playMastermind();
 }

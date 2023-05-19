@@ -9,7 +9,7 @@
 using namespace std;
 int randomWithLimits(int a, int b) {
 	srand(std::time(nullptr));
-	for (int i = 0; i < 100; i++)  rand();
+	for (int i = 0; i < 100; i++) rand();
 	int tilfeldig_tall = rand() % 900 + 101;
 	return tilfeldig_tall;
 }

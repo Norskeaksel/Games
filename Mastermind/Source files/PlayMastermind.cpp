@@ -47,6 +47,8 @@ void playMastermind() {
 		addGuess(mwin, guess, SIZE, 'A', round);
 		addFeedback(mwin, riktige, nesten, SIZE, round);
 	}
+	Fl::wait();
+	Fl::redraw();
 	cout << "Har du lyst til å spille igjen? y/n" << endl;
 	char x;
 	cin >> x;
