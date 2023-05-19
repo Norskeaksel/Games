@@ -4,12 +4,23 @@
 #include "Cards.h"
 #include "Carddeck.h"
 class Blackjack {
+private:
+	vector<Card>hand;
+
 public:
 	Blackjack(bool isPlayer, CardDeck& deck) {
 		for (int i = 0; i < 2; i++) {
 			Sleep(500);
 			hand.push_back(deck.drawCard());
-			if (isPlayer)cout << "player: " << hand[i].toString() << endl;
+			if (isPlayer) {
+				cout << "player: " << hand[i].toString() << endl;
+			}
+			else
+				if (i == 0) {
+					Sleep(500);
+					cout<<"dealer: " << hand[i].toString() << "\n\n";
+					Sleep(500);
+				}
 		}
 	}
 	int handValue() {
@@ -36,8 +47,5 @@ public:
 	vector<Card> getHand() { return hand; }
 	//CardDeck getCardDeck() { return deck; }
 	int handSize() { return hand.size(); }
-private:
-	vector<Card>hand;
 };
 void blackjack();
-void anotherGame();
