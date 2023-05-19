@@ -41,14 +41,14 @@ void play(){
 				cout << b << "Player 1 wins!\n";
 			else
 				cout << b << "\nYou won!\n";
-			break;
+			return;
 		}
 		if (machineTurn(b, choice)) {
 			if (choice == 2)
 				cout << b << "Player 2 wins!\n";
 			else
 				cout << b << "\nYou lose\n";
-			break;
+			return;
 		}
 	}
 	if (sum == -2)
